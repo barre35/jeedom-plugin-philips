@@ -21,4 +21,4 @@ Rédaction ultérieure.
 Pour aller plus loin
 ===
 
-Rédaction ultérieure.
+Penser à noter le plugin sur le market et faites part de vos remarques, demandes d'évolutions et bugs sur le forum [https://community.jeedom.com/t/plugin-spotify/11914](https://community.jeedom.com/t/plugin-spotify/11914)

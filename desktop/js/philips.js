@@ -7,6 +7,7 @@ function addCmdToTable(_cmd) {
         var _cmd = {configuration: {}};
     }
   
+  console.log( _cmd);
     tr += '<tr class="cmd" data-cmd_id="' + init(_cmd.id) + '">';
     tr += ' <td>';
     tr += '  <span class="cmdAttr" data-l1key="id">';
@@ -24,8 +25,7 @@ function addCmdToTable(_cmd) {
     tr += '  <span class="cmdAttr" data-l1key="configuration" data-l2key="key_data"></span>';
     tr += ' </td>';
     tr += ' <td>';
-    tr += '  <span><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isHistorized" /> {{Historiser}}<br/></span>';
-   	tr += '  <span><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isVisible" /> {{Affichage}}<br/></span>';
+    tr += '  <span><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isVisible" /> {{Affichage}}<br/></span>';
 	tr += ' </td>';
     tr += ' <td>';
     if (is_numeric(_cmd.id)) {

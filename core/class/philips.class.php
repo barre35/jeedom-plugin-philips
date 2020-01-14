@@ -10,13 +10,19 @@ class philips extends eqLogic {
 
   	public function preInsert() {
     
+      log::add('philips', 'debug', 'preInsert()');
+      
     }
   
 	// postInsert ⇒ Méthode appellée après la création de votre objet
 
   	public function postInsert() {
       
-		$cmd = new philipsCmd();
+	  log::add('philips', 'debug', 'postInsert()');	
+      
+      log::add('philips', 'debug', 'postInsert()');
+      
+      	$cmd = new philipsCmd();
         $cmd->setName(__('OFF', __FILE__));
         $cmd->setEqLogic_id($this->id);
 		$cmd->setConfiguration('key_data', 'Standby');
@@ -24,7 +30,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 1);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -35,7 +41,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 22);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -46,7 +52,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 11);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -57,7 +63,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 7);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -68,7 +74,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 8);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -79,7 +85,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 9);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -90,7 +96,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 10);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -101,7 +107,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 12);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -112,6 +118,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 26);
+        $cmd->setIsVisible(1);
         $cmd->save();
         
         $cmd = new philipsCmd();
@@ -122,6 +129,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 24);
+        $cmd->setIsVisible(1);
         $cmd->save();
         
         $cmd = new philipsCmd();
@@ -132,6 +140,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 25);
+        $cmd->setIsVisible(1);
         $cmd->save();
         
         $cmd = new philipsCmd();
@@ -142,7 +151,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 23);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -152,9 +161,8 @@ class philips extends eqLogic {
 		$cmd->setConfiguration('ApiType', 'key');
         $cmd->setType('action');
         $cmd->setSubType('other');
-        $cmd->setIsVisible(false);
-		$cmd->setConfiguration('order', 39);
-        $cmd->setIsVisible(false);
+        $cmd->setConfiguration('order', 39);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -164,10 +172,10 @@ class philips extends eqLogic {
 		$cmd->setConfiguration('ApiType', 'key');
         $cmd->setType('action');
         $cmd->setSubType('other');
-		$cmd->setConfiguration('order', 37);
-        $cmd->setIsVisible(false);
+		$cmd->setConfiguration('order', 27);
+        $cmd->setIsVisible(0);
 		$cmd->save();
-        
+      
         $cmd = new philipsCmd();
         $cmd->setName(__('1', __FILE__));
         $cmd->setEqLogic_id($this->id);
@@ -176,7 +184,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 27);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -187,7 +195,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 28);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -198,7 +206,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 29);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -209,7 +217,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 30);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -220,7 +228,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 31);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -231,7 +239,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 32);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -242,7 +250,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 33);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -253,7 +261,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 34);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -264,7 +272,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 35);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -275,6 +283,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 40);
+        $cmd->setIsVisible(1);
         $cmd->save();
         
         $cmd = new philipsCmd();
@@ -285,7 +294,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 14);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -296,7 +305,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 20);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -307,7 +316,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 16);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -318,7 +327,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 18);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -329,7 +338,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 17);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -340,7 +349,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 41);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -351,7 +360,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 42);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -362,7 +371,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 13);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -373,7 +382,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 43);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -384,7 +393,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 44);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -395,7 +404,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 38);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -406,7 +415,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 36);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -417,7 +426,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 19);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -428,7 +437,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 15);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -439,7 +448,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 21);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -450,7 +459,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 45);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -461,7 +470,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 5);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -472,7 +481,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 3);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -483,7 +492,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 6);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -494,7 +503,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 2);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -505,7 +514,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
 		$cmd->setConfiguration('order', 4);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -516,7 +525,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 46);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
         
         $cmd = new philipsCmd();
@@ -527,7 +536,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 47);
-        $cmd->setIsVisible(false);
+        $cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -538,7 +547,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 48);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -549,7 +558,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 49);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -560,7 +569,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 50);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -571,7 +580,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 51);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -582,7 +591,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 52);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -593,7 +602,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 53);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -604,7 +613,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 54);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -615,7 +624,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 55);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -626,7 +635,7 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 56);
-      	$cmd->setIsVisible(false);
+      	$cmd->setIsVisible(0);
 		$cmd->save();
 		
 		$cmd = new philipsCmd();
@@ -637,20 +646,24 @@ class philips extends eqLogic {
         $cmd->setType('action');
         $cmd->setSubType('other');
         $cmd->setConfiguration('order', 57);
-		$cmd->setIsVisible(false);
+		$cmd->setIsVisible(0);
 		$cmd->save();
-    
+      
     }
 
 	// preUpdate ⇒ Méthode appellée avant la mise à jour de votre objet
 
 	public function preUpdate() {
-          
+         
+    	log::add('philips', 'debug', 'preUpdate()');
+      
 	}
 
   	// postUpdate ⇒ Méthode appellée après la mise à jour de votre objet
 
   	public function postUpdate() {
+      
+      	log::add('philips', 'debug', 'postUpdate()');
       
     }
 
@@ -658,32 +671,41 @@ class philips extends eqLogic {
 
   	public function preSave() {   
       
+      	log::add('philips', 'debug', 'preSave()');
+      
     }
 
   	// postSave ⇒ Méthode appellée après la sauvegarde de votre objet
 
   	public function postSave() {
       
+      	log::add('philips', 'debug', 'postSave0()');
+            
     }
 
   	// preRemove ⇒ Méthode appellée avant la supression de votre objet
 
   	public function preRemove() {
 
+      	log::add('philips', 'debug', 'preRemove()');
+      
     }
   
   	// postRemove ⇒ Méthode appellée après la supression de votre objet
 
   	public function postRemove() {
       
+      	log::add('philips', 'debug', 'postRemove()');
+      
     }
     
 }
+
 class philipsCmd extends cmd {
 
 	public function preSave() {
       
-		if ($this->getConfiguration('key_data') == '') {
+        if ($this->getConfiguration('key_data') == '') {
             throw new Exception(__('La clé data ne peut pas être vide',__FILE__));
         }
       

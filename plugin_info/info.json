@@ -4,7 +4,7 @@
   "description" : "Plugin pour le pilotage des TV philips",
   "licence" : "GPL",
   "author" : "sbarre35",
-  "require": "3.3.31",
+  "require": "3.0",
   "category" : "multimedia",
   "changelog" : "https://barre35.github.io/jeedom-plugin-philips/#language#/changelog",
   "documentation" : "https://barre35.github.io/jeedom-plugin-philips/#language#/index"

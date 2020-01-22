@@ -53,4 +53,4 @@ vous aurez alors un widget pour interragir avec votre TV et pourrez également u
 Pour aller plus loin
 ===
 
-Penser à noter le plugin sur le market et faites part de vos remarques, demandes d'éélutions et bugs sur le forum [hthttps://community.jeedom.com/t/plugin-spotify/11914https://community.jeedom.com/t/plugin-spotify/11914)
+Penser à noter le plugin sur le market et faites part de vos remarques, demandes d'éélutions et bugs sur le forum [https://community.jeedom.com/t/plugin-spotify/11914](https://community.jeedom.com/t/plugin-spotify/11914)

@@ -43,6 +43,8 @@ Chaque équipement dispose des commandes suivantes que vous pouvez rendre visibl
 
 ![plugin](https://barre35.github.io/jeedom-plugin-philips/assets/images/commands.png)
 
+Si vous voulez utiliser la selection des sources avec une TV android, il vous faudra activer le mode debug sur votre TV. Pour cela appuyer 7 fois de suite sur l'option "build" dans "Paramètres Android" > "A propos", puis dans le nouveau menu qui apparait dans les préférences, activer le mode debug. 
+
 Widgets
 ===
 

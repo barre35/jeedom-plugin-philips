@@ -1,4 +1,8 @@
-﻿# 22-01-2019
+﻿# 13-02-2020
+
+- Support des sources Android TV
+
+# 22-01-2019
 
 - Corrections de divers bugs et optimisations 
 - Mise à jour de la documentation

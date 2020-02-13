@@ -6,6 +6,44 @@ require_once dirname(__FILE__) . '/../../../../core/php/core.inc.php';
 
 class philips extends eqLogic { 
      
+    public static function dependancy_info() {
+      
+      	log::add('philips', 'debug', '--- DEPENDANCY INFO ---');
+      
+      	$return = array(); 
+      
+		$return['log'] = 'philips_dep'; 
+		$return['progress_file'] = '/tmp/philips_dependancy'; 
+      
+        $cmd = 'sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/info.sh';
+        $cmd .= ' >> ' . log::getPathToLog('philips_dep') . ' 2>&1'; 
+        
+      	system(  $cmd, $code);
+        
+      	$return['state'] = ($code==0) ? 'ok' : 'nok'; 
+        log::add('philips', 'debug', '--- DEPENDANCY ' . strtoupper($return['state']) . ' ---');
+      	
+		return $return; 
+  	
+    }
+
+  	public static function dependancy_install() {
+    
+      	log::add('philips', 'debug', '--- DEPENDANCY INSTALL ---');
+      
+      	if (file_exists('/tmp/philips_dependancy')) { 
+			return; 
+		} 
+      
+		log::remove('philips_dep'); 
+      
+		$cmd = 'sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/install.sh'; 
+		$cmd .= ' >> ' . log::getPathToLog('philips_dep') . ' 2>&1 &'; 
+      
+		exec($cmd); 
+      
+  	}
+  
 	// preInsert ⇒ Méthode appellée avant la création de votre objet
 
   	public function preInsert() {
@@ -543,6 +581,7 @@ class philips extends eqLogic {
         $cmd->setName(__('HDMI 1', __FILE__));
         $cmd->setEqLogic_id($this->id);
 		$cmd->setConfiguration('key_data', 'hdmi1');
+		$cmd->setConfiguration('key_data2', 'KEYCODE_F1');
 		$cmd->setConfiguration('ApiType', 'sources');
         $cmd->setType('action');
         $cmd->setSubType('other');
@@ -554,6 +593,7 @@ class philips extends eqLogic {
         $cmd->setName(__('HDMI 2', __FILE__));
         $cmd->setEqLogic_id($this->id);
 		$cmd->setConfiguration('key_data', 'hdmi2');
+		$cmd->setConfiguration('key_data2', 'KEYCODE_F2');
 		$cmd->setConfiguration('ApiType', 'sources');
         $cmd->setType('action');
         $cmd->setSubType('other');
@@ -565,6 +605,43 @@ class philips extends eqLogic {
         $cmd->setName(__('HDMI 3', __FILE__));
         $cmd->setEqLogic_id($this->id);
 		$cmd->setConfiguration('key_data', 'hdmi3');
+		$cmd->setConfiguration('key_data2', 'KEYCODE_F3');
+		$cmd->setConfiguration('ApiType', 'sources');
+        $cmd->setType('action');
+        $cmd->setSubType('other');
+        $cmd->setConfiguration('order', 50);
+		$cmd->setIsVisible(0);
+		$cmd->save();
+		
+		$cmd = new philipsCmd();
+        $cmd->setName(__('HDMI 4', __FILE__));
+        $cmd->setEqLogic_id($this->id);
+		$cmd->setConfiguration('key_data', 'hdmi4');
+		$cmd->setConfiguration('key_data2', 'KEYCODE_F4');
+		$cmd->setConfiguration('ApiType', 'sources');
+        $cmd->setType('action');
+        $cmd->setSubType('other');
+        $cmd->setConfiguration('order', 50);
+		$cmd->setIsVisible(0);
+		$cmd->save();
+		
+		$cmd = new philipsCmd();
+        $cmd->setName(__('HDMI 5', __FILE__));
+        $cmd->setEqLogic_id($this->id);
+		$cmd->setConfiguration('key_data', 'hdmi5');
+		$cmd->setConfiguration('key_data2', 'KEYCODE_F5');
+		$cmd->setConfiguration('ApiType', 'sources');
+        $cmd->setType('action');
+        $cmd->setSubType('other');
+        $cmd->setConfiguration('order', 50);
+		$cmd->setIsVisible(0);
+		$cmd->save();
+		
+		$cmd = new philipsCmd();
+        $cmd->setName(__('HDMI 6', __FILE__));
+        $cmd->setEqLogic_id($this->id);
+		$cmd->setConfiguration('key_data', 'hdmi6');
+		$cmd->setConfiguration('key_data2', 'KEYCODE_F6');
 		$cmd->setConfiguration('ApiType', 'sources');
         $cmd->setType('action');
         $cmd->setSubType('other');
@@ -773,17 +850,35 @@ class philipsCmd extends cmd {
 
           	case 'sources':
             
-            	$request .= "/sources/current -d '{";
-            	$request .= '"id":"';
-            	$request .= $key_data;
-            	$request .= '"}';
-				$request .= "'";	
+            	$key_data2  = $this->getConfiguration('key_data2');
             
-            	$request_shell = new com_shell($request . ' 2>&1');
-        		$result = trim($request_shell->exec());
+            	if( $key_data2 != "" ) {
+                  
+                  	$request .= "adb connect " . $IPaddress . " ; adb shell input keyevent " . $key_data2;
+                  
+            		$request_shell = new com_shell($request . ' 2>&1');
+        			$result = trim($request_shell->exec());
 
-        		return $result;
+        			return $result;
             
+                } else {
+                  
+            		$request .= "/sources/current -d '{";
+            		$request .= '"id":"';
+            		$request .= $key_data;
+            		$request .= '"}';
+					$request .= "'";	
+            
+            		$request_shell = new com_shell($request . ' 2>&1');
+        			$result = trim($request_shell->exec());
+
+        			return $result;
+            
+                }
+            
+            	
+                  
+                  
             break;
             
           	default:

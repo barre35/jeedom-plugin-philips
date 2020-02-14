@@ -854,7 +854,7 @@ class philipsCmd extends cmd {
             
             	if( $key_data2 != "" ) {
                   
-                  	$request .= "adb connect " . $IPaddress . " ; adb shell input keyevent " . $key_data2;
+                  	$request = "adb connect " . $IPaddress . " ; adb shell input keyevent " . $key_data2;
                   
             		$request_shell = new com_shell($request . ' 2>&1');
         			$result = trim($request_shell->exec());

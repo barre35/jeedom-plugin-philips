@@ -1,4 +1,8 @@
-﻿# 13-02-2020
+﻿# 14-02-2020
+
+- Patch/correctif des sources AnrdoidTV
+
+# 13-02-2020
 
 - Support des sources Android TV
 

@@ -1,10 +1,14 @@
-﻿# 14-02-2020
+﻿# 16-02-2020
 
-- Patch/correctif des sources AnrdoidTV
+- Renforcement de la connection des sources AndroidTV (expérimental)
+
+# 14-02-2020
+
+- Patch/correctif des sources AnrdoidTV (expérimental)
 
 # 13-02-2020
 
-- Support des sources Android TV
+- Support des sources Android TV (expérimental)
 
 # 22-01-2019
 

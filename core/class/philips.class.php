@@ -852,15 +852,48 @@ class philipsCmd extends cmd {
             
             	$key_data2  = $this->getConfiguration('key_data2');
             
-            	if( $key_data2 != "" ) {
+            	if( $user != "" && $auth_key != "" && $key_data2 != "" ) {
                   
-                  	$request = "adb connect " . $IPaddress . " ; adb shell input keyevent " . $key_data2;
+                  	$request = "sudo adb devices 2>&1 | grep " . $IPaddress . " | wc -l";
+                  	log::add('philips', 'debug', "system = " . $request);
+                  	$result = system( $request);
+                  	log::add('philips', 'debug', "check = " . $result);
                   
-            		$request_shell = new com_shell($request . ' 2>&1');
-        			$result = trim($request_shell->exec());
-
-        			return $result;
+                  	$loop = 12;
+                  
+                  	while( $result <= 0 && $loop >= 0 ) {
+                      
+                      	$request = "sudo adb connect " . $IPaddress . " 2>&1";
+                  		log::add('philips', 'debug', "system = " . $request);
+                  		$connect = system( $request);
+                  		log::add('philips', 'debug', "connect = " . $connect);
+                      
+                      	usleep(250);
+                      
+                    	$request = "sudo adb devices 2>&1 | grep " . $IPaddress . " | wc -l";
+                  		log::add('philips', 'debug', "system = " . $request);
+                  		$result = system( $request);
+                  		log::add('philips', 'debug', "check = " . $result);
+                      
+                      	$loop = $loop - 1;
+                      
+                    }
+                  
+                  	if( $result <= 0 ) {
+                      
+                    	return "Unable to connect";
+                      
+                    } else {
+                  
+                  		$request = "sudo adb -s " . $IPaddress . " shell input keyevent " . $key_data2 . " 2>&1";
+                      	log::add('philips', 'debug', "system = " . $request);
+                  		$command = system( $request);
+                  		log::add('philips', 'debug', "command = " . $command);
+                      	
+        				return $command;
             
+                    }
+                  
                 } else {
                   
             		$request .= "/sources/current -d '{";
@@ -875,9 +908,6 @@ class philipsCmd extends cmd {
         			return $result;
             
                 }
-            
-            	
-                  
                   
             break;
             

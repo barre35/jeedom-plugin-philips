@@ -1,6 +1,6 @@
 ﻿# 16-02-2020
 
-- Renforcement de la connection des sources AndroidTV (expérimental)
+- Renforcement de la connection pour les sources Android TV (expérimental)
 
 # 14-02-2020
 
